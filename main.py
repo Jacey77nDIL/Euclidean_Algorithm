@@ -7,18 +7,14 @@ def euclidean_algorithm():
     b = int(input("What is your second number? "))
 
     if b > a:
-        num_1 = b
-        num_2 = a
-    else:
-        num_1 = a
-        num_2 = b
+        a, b = b, a #The RHS is evaluated before assignment
 
-    while num_2 > 0:
-        remainder = num_1 % num_2
-        num_1 = num_2
-        num_2 = remainder
+    while b > 0:
+        remainder = a % b
+        a = b
+        b = remainder
 
-    print(num_1)
+    print(f'The GCD is {a}')
 
 # Function Call
 euclidean_algorithm()
